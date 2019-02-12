@@ -1,0 +1,87 @@
+/* << SPINNER LOADER >> */
+.lds-dual-ring {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 46px;
+  height: 46px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 5px solid #bababa;
+  border-color: #bababa transparent #bababa transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+#DTW-container {
+  margin-top: 5%; 
+}
+
+.DTW-container__post {
+  border: 1px solid #d6d6d6;
+  box-shadow: 3px 3px 0px #bababa;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.post__title {
+  margin-bottom: 8px;
+}
+
+.post__title > h5 > a {
+  font-weight: bold;
+  color: #303030;
+  text-decoration: none;
+}
+
+.post__title > h5 > a:hover {
+  text-decoration: underline;
+}
+
+.post__content {
+  overflow: auto;
+  padding: 9px;
+  padding-top: 12px;
+  padding-bottom: 0px;
+  color: #666666;
+}
+
+.post_content > a {
+  color: #666666;
+}
+
+.content__date {
+  float: left;
+  font-size: 15px;
+  margin: 0 !important;
+}
+
+.content__likes,
+.content__comments {
+  float: right;
+  margin: 0;
+  margin-left: 8px;
+}
+
+.content__likes > p,
+.content__comments > p {
+  display: inline;
+  font-size: 15px;
+}
+
+.content__likes > img,
+.content__comments > img {
+  height: 15px;
+}

@@ -4,7 +4,7 @@ Plugin Name: Dev To WordPress
 Description: A widget to show your DEV.to posts in WordPress
 Author: Anderson J Vargas
 Version: 1.0
-Author URI: http://github.com/andersonjoseph
+Author URI: http://andersonjoseph.ml
 */
 
 class DTW_Widget extends WP_Widget {

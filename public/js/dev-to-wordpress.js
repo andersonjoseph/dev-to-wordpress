@@ -13,27 +13,24 @@ async function getPosts() {
       body: JSON.stringify({
         params: params
       })
-    }
-    )
+    });
+
   const body = await response.json();
 
   return body.hits;
 }
 
-async function showPosts() {
+(async function showPosts() {
   const container = document.getElementById('DTW-container');
   let posts;
   try {
     posts = await getPosts();
   } catch(err) {
-    console.log('error!');
-    console.log(err);
-    container.innerHTML = `<p> <span style = 'color: red'>Something bad has happened :( </span></p>`;
-
-    return;
+    return container.innerHTML = `<p> <span style = 'color: red'>Something bad has happened :( </span></p>`;
   }
 
   container.innerHTML = '';
+
   for(let post of posts) {
     const HTMLpost = `
     <div class="DTW-container__post">
@@ -61,8 +58,7 @@ async function showPosts() {
       </div>
     </div>
     `;
+    
     container.innerHTML += HTMLpost;
   }
-}
-
-showPosts();
+})();

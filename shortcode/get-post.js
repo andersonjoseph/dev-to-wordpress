@@ -50,6 +50,10 @@ async function DTW_SHORTCODE_showPost(container, postURL) {
           <img style="height: 15px;" src="${DTW_image_reactions}">
         </figure> 
 
+        <div class="arrow-right">
+          <span>DEV</span>
+        </div>
+
       </div>
     </main>
   `;

@@ -20,13 +20,9 @@ class DTW_Widget extends WP_Widget {
   public function form($instance) {
     $title = isset($instance['title']) ? esc_html__($instance['title']) : 'Dev.to Posts';
     $username = isset($instance['username']) ? esc_html__($instance['username']) : '';
-    $user_id = isset($instance['user_id']) ? esc_html__($instance['user_id']) : '';
     $num_of_posts = isset($instance['num_of_posts']) ? esc_html__($instance['num_of_posts']) : '0';
 
-    include_once 'admin/get-id.php';
-    
     include 'admin/admin-form.php';
-
   }
 
   public function widget($args, $instance) {
@@ -45,7 +41,6 @@ class DTW_Widget extends WP_Widget {
 
     $instance['title'] = isset($new_instance['title']) ? $new_instance['title'] : '';
     $instance['username'] = isset($new_instance['username']) ? $new_instance['username'] : '';
-    $instance['user_id'] = isset($new_instance['user_id']) ? $new_instance['user_id'] : '';
     $instance['num_of_posts'] = isset($new_instance['num_of_posts']) ? $new_instance['num_of_posts'] : '';
 
     return $instance;

@@ -72,3 +72,9 @@ add_action('wp_enqueue_scripts', function() {
 add_action('widgets_init', function() {
   register_widget('DTW_Widget');
 });
+
+/*
+  << Including shortcode >>
+*/
+
+include plugin_dir_path(__FILE__) . 'shortcode/DTW-shortcode.php';

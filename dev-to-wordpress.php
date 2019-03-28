@@ -56,14 +56,14 @@ class DTW_Widget extends WP_Widget {
   << Register JS scripts >>
 */
 add_action('wp_enqueue_scripts', function() {
-  wp_register_script('DTW_get_posts', '/wp-content/plugins/dev-to-wordpress/public/js/dev-to-wordpress.js');
+  wp_register_script('DTW_get_posts', plugins_url('dev-to-wordpress/public/js/dev-to-wordpress.js'));
 });
 
 /*
   << Register CSS styles >>
 */
 add_action('wp_enqueue_scripts', function() {
-  wp_register_style('DTW_style_post', '/wp-content/plugins/dev-to-wordpress/public/css/style.css');
+  wp_register_style('DTW_style_post', plugins_url('dev-to-wordpress/public/css/style.css'));
 });
 
 /*

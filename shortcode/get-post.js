@@ -39,13 +39,13 @@ async function DTW_SHORTCODE_showPost(container, postURL) {
         </a>  
         ·
         <p style="display: inline; margin-right: 8px;">${new Date(post.published_at).toDateString()}</p>
-        |
+        <span style="margin-right = 4px; margin-left = 4px;">|</span>
         <figure style="display: inline;">
           <p style="display: inline;">${post.comments_count}</p> 
           <img style="height: 15px;" src="${DTW_image_comments}">
         </figure> 
 
-        <figure style="margin-left: 4px; display: inline;">
+        <figure style="display: inline;">
           <p style="display: inline;">${post.positive_reactions_count}</p> 
           <img style="height: 15px;" src="${DTW_image_reactions}">
         </figure> 

@@ -57,6 +57,8 @@ class DTW_Widget extends WP_Widget {
 */
 add_action('wp_enqueue_scripts', function() {
   wp_register_script('DTW_get_posts', plugins_url('dev-to-wordpress/public/js/dev-to-wordpress.js'));
+  wp_localize_script('DTW_get_posts', 'DTW_image_reactions', plugins_url('dev-to-wordpress/public/img/reactions.png'));
+  wp_localize_script('DTW_get_posts', 'DTW_image_comments', plugins_url('dev-to-wordpress/public/img/comments.png'));
 });
 
 /*

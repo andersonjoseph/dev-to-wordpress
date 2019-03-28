@@ -49,14 +49,14 @@ async function DTW_showPosts(container) {
         <a href="https://dev.to${post.path}">
           <figure class="content__likes">
             <p>${post.positive_reactions_count}</p>
-            <img src="/wp-content/plugins/dev-to-wordpress/public/img/reactions.png">
+            <img src="${DTW_image_reactions}">
           </figure>
         </a>
 
         <a href="https://dev.to${post.path}#comments">
           <figure class="content__comments">
             <p>${post.comments_count}</p>
-            <img src="/wp-content/plugins/dev-to-wordpress/public/img/comments.png">
+            <img src="${DTW_image_comments}">
           </figure>
         </a>
       </div>

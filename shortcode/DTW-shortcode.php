@@ -19,7 +19,7 @@ add_shortcode('devtowordpress', 'DTW_shortcode');
 */
 add_action('wp_enqueue_scripts', function() {
   wp_register_script('DTW_shortcode_script', plugins_url('dev-to-wordpress/shortcode/get-post.js'));
-  wp_localize_script('DTW_shortcode_script', 'DTW_image_reactions', plugins_url('dev-to-wordpress/public/img/reactions.png'));
+  wp_localize_script('DTW_get_posts', 'DTW_image_reactions', plugins_url('dev-to-wordpress/public/img/reactions.png'));
 });
 
 /*

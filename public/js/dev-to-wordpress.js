@@ -1,33 +1,20 @@
-async function DTW_getPosts(params) {
-  const DTW_url = 'https://ye5y9r600c-3.algolianet.com/1/indexes/ordered_articles_production/query?x-algolia-agent=Algolia for vanilla JavaScript 3.20.3&x-algolia-application-id=YE5Y9R600C&x-algolia-api-key=OTU1YjU5MWNlZTk1MjQ0YmExOTRjZmY4NDM2ZTM2YWZiYTM2ODA2NThhMzNjMDkzYTEzYjFmNDY0MDcwNjRkOHJlc3RyaWN0SW5kaWNlcz1zZWFyY2hhYmxlc19wcm9kdWN0aW9uJTJDVGFnX3Byb2R1Y3Rpb24lMkNvcmRlcmVkX2FydGljbGVzX3Byb2R1Y3Rpb24lMkNvcmRlcmVkX2FydGljbGVzX2J5X3B1Ymxpc2hlZF9hdF9wcm9kdWN0aW9uJTJDb3JkZXJlZF9hcnRpY2xlc19ieV9wb3NpdGl2ZV9yZWFjdGlvbnNfY291bnRfcHJvZHVjdGlvbiUyQ29yZGVyZWRfY29tbWVudHNfcHJvZHVjdGlvbg==';
-  const response = await fetch(
-    DTW_url,
-    {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        params: params
-      })
-    });
+async function DTW_getPosts(username) {
+  const DTW_url = `https://dev.to/api/articles?username=${username}`;
+  const response = await fetch(DTW_url);
 
-  const body = await response.json();
+  const posts = await response.json();
 
-  return body.hits;
+  return posts;
 }
 
 async function DTW_showPosts(container) {
   let posts;
 
-  const n = container.getAttribute('data-n');
-  const userID = container.getAttribute('data-userID');
-
-  const params = `query=*&hitsPerPage=${n}&page=0&attributesToHighlight=[]&tagFilters=["${userID}"]`;
+  const numberOfPosts = container.getAttribute('data-n');
+  const username = container.getAttribute('data-username');
 
   try {
-    posts = await DTW_getPosts(params);
+    posts = await DTW_getPosts(username);
   } catch(err) {
     console.log(err);
     return container.innerHTML = `<p> <span style = 'color: red'>Something bad has happened :( </span></p>`;
@@ -35,18 +22,22 @@ async function DTW_showPosts(container) {
 
   container.innerHTML = '';
 
+  let i = 0;
   for(let post of posts) {
+    if(i >= numberOfPosts){
+      break;
+    }
     const HTMLpost = `
     <div class="DTW-container__post">
       <div class="post__title">
-        <h5><a href="https://dev.to${post.path}">${post.title}</a></h5>
+        <h5><a href="post.url">${post.title}</a></h5>
       </div>
 
       <div class="post__content">
 
-        <p class="content__date">${post.readable_publish_date}</p>
+        <p class="content__date">${new Date(post.published_at).toDateString()}</p>
 
-        <a href="https://dev.to${post.path}">
+        <a href="${post.url}">
           <figure class="content__likes">
             <p>${post.positive_reactions_count}</p>
             <img src="${DTW_image_reactions}">
@@ -62,8 +53,8 @@ async function DTW_showPosts(container) {
       </div>
     </div>
     `;
-    
     container.innerHTML += HTMLpost;
+    i++;
   }
 };
 

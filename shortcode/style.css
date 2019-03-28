@@ -1,0 +1,57 @@
+/* << SPINNER LOADER >> */
+.lds-dual-ring {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 46px;
+  height: 46px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 5px solid #bababa;
+  border-color: #bababa transparent #bababa transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*-------*/
+
+.DTW_shortcode_container {
+  overflow: auto;
+  border: 1px solid #d6d6d6;
+  box-shadow: 3px 3px 0px #bababa;
+  padding: 8px;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.DTW_shortcode_container h3 {
+  margin: 0;
+}
+
+.DTW_shortcode_container > figure {
+  width: 10%;
+  float: left;
+}
+
+.DTW_shortcode_container main {
+  float: left;
+  width: auto;
+}
+
+.DTW_shortcode_container main a {
+  text-decoration: none;
+  color: inherit;
+}
+
+

@@ -1,11 +1,13 @@
 # dev-to-wordpress
 A wordpress plugin to show your DEV.to posts.
 
+---
+
 ## Usage
 
 ### Widget
 
-The sidebar widget display the latest posts of the user given. You can use the widget in any widget area of your theme.
+The sidebar widget display the latest articles of the user given. You can use this widget in any widget area of your theme.
 
 ![](sc1.png)
 

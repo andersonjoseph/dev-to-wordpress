@@ -21,19 +21,36 @@ async function DTW_SHORTCODE_showPost(container, postURL) {
     post = await DTW_SHORTCODE_getPost(postURL);
   } catch(err) {
     console.log(err);
-    return container.innerHTML = '<span color: red>Something bad happened :( </span>'
+    return container.innerHTML = '<span style="color: red;">Something bad has happened :( </span>'
   }
 
   const HTML = `
     <figure>
       <a href="https://dev.to/${post.user.name}">
-        <img src="${post.user.profile_image}">
+        <img style = 'border-radius: 50%' src="${post.user.profile_image}">
       </a>
     </figure>
     <main>
       <h3><a href="${post.url}">${post.title}</a></h3>
 
-      <a style="display: inline;" href="https://dev.to/${post.user.name}">${post.user.name}</a> | <figure style="display: inline;"><p style="display: inline;">${post.positive_reactions_count}</p> <img style="height: 15px;" src="${DTW_image_reactions}"></figure>
+      <div style="margin: 8px;">
+        <a style="display: inline;" href="https://dev.to/${post.user.name}">
+          ${post.user.name}
+        </a>  
+        ·
+        <p style="display: inline; margin-right: 8px;">${new Date(post.published_at).toDateString()}</p>
+        |
+        <figure style="display: inline;">
+          <p style="display: inline;">${post.comments_count}</p> 
+          <img style="height: 15px;" src="${DTW_image_comments}">
+        </figure> 
+
+        <figure style="margin-left: 4px; display: inline;">
+          <p style="display: inline;">${post.positive_reactions_count}</p> 
+          <img style="height: 15px;" src="${DTW_image_reactions}">
+        </figure> 
+
+      </div>
     </main>
   `;
 

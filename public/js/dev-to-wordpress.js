@@ -30,7 +30,7 @@ async function DTW_showPosts(container) {
     const HTMLpost = `
     <div class="DTW-container__post">
       <div class="post__title">
-        <h5><a href="post.url">${post.title}</a></h5>
+        <h5><a href="${post.url}">${post.title}</a></h5>
       </div>
 
       <div class="post__content">

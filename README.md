@@ -19,3 +19,7 @@ Syntax:
     [devtowordpres post="https://dev.to/username/post-url-example"] 
 
 ![](sc2.png)
+
+## Download
+
+For downloads, check the [latest releases](https://github.com/andersonjoseph/dev-to-wordpress/releases). Install the .zip file from your WordPress admin panel.

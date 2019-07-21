@@ -16,7 +16,7 @@ The sidebar widget display the latest articles of the user given. You can use th
 Use shortcodes to display a particular post.
 Syntax:
 
-    [devtowordpres post="https://dev.to/username/post-url-example"] 
+    [devtowordpress post="https://dev.to/username/post-url-example"]
 
 ![](sc2.png)
 
